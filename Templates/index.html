@@ -1,0 +1,321 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        ROHIT ADHAV Market | Online Shopping
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <a href="/" class="logo">
+        ROHIT <span>ADHAV</span> Market
+    </a>
+
+    <div class="search-box">
+
+        <input
+            id="search"
+            type="text"
+            placeholder="Search ROHIT ADHAV Market">
+
+        <button onclick="loadProducts()">
+            🔍
+        </button>
+
+    </div>
+
+    <nav>
+
+        <a href="#products">
+            Products
+        </a>
+
+        <a href="#categories">
+            Categories
+        </a>
+
+        <a href="/checkout">
+            🛒 Cart
+            <b id="cartCount">0</b>
+        </a>
+
+    </nav>
+
+</header>
+
+
+<div class="category-bar">
+
+    <button
+        class="category-button active"
+        data-category="">
+
+        All
+
+    </button>
+
+    {% for category in categories %}
+
+        <button
+            class="category-button"
+            data-category="{{ category }}">
+
+            {{ category }}
+
+        </button>
+
+    {% endfor %}
+
+</div>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            ROHIT ADHAV MARKETPLACE
+        </div>
+
+        <h1>
+            Everything you need.
+            <br>
+            <span>
+                All in one place.
+            </span>
+        </h1>
+
+        <p>
+            Shop fashion, electronics, home products,
+            beauty, sports, grocery and more.
+        </p>
+
+        <a
+            href="#products"
+            class="main-button">
+
+            Shop Now
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<section
+    id="categories"
+    class="section">
+
+    <div class="section-label">
+        EXPLORE
+    </div>
+
+    <h2>
+        Shop by Category
+    </h2>
+
+    <div class="category-grid">
+
+        {% for category in categories %}
+
+        <button
+            class="category-card"
+            data-category="{{ category }}">
+
+            <img
+                src="{{ {
+                    'Fashion': 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&q=80',
+                    'Electronics': 'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500&q=80',
+                    'Home': 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=500&q=80',
+                    'Beauty': 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&q=80',
+                    'Sports': 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=500&q=80',
+                    'Grocery': 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&q=80',
+                    'Footwear': 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80',
+                    'Bags': 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80',
+                    'Watches': 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500&q=80',
+                    'Accessories': 'https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?w=500&q=80'
+                }[category] }}"
+                alt="{{ category }}">
+
+            <strong>
+                {{ category }}
+            </strong>
+
+            <span>
+                20 products →
+            </span>
+
+        </button>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<section
+    id="products"
+    class="section products-section">
+
+    <div class="products-header">
+
+        <div>
+
+            <div class="section-label">
+                ROHIT ADHAV MARKET COLLECTION
+            </div>
+
+            <h2>
+                Products
+            </h2>
+
+            <p id="resultText">
+                Loading products...
+            </p>
+
+        </div>
+
+        <select id="sort">
+
+            <option value="">
+                Featured
+            </option>
+
+            <option value="low">
+                Price: Low to High
+            </option>
+
+            <option value="high">
+                Price: High to Low
+            </option>
+
+            <option value="rating">
+                Top Rated
+            </option>
+
+        </select>
+
+    </div>
+
+    <div
+        id="productsGrid"
+        class="products-grid">
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="logo">
+                ROHIT <span>ADHAV</span> Market
+            </div>
+
+            <p>
+                Your online shopping destination.
+            </p>
+
+        </div>
+
+        <div>
+
+            <strong>
+                Shop
+            </strong>
+
+            <p>
+                Fashion
+            </p>
+
+            <p>
+                Electronics
+            </p>
+
+            <p>
+                Home
+            </p>
+
+        </div>
+
+        <div>
+
+            <strong>
+                Customer Service
+            </strong>
+
+            <p>
+                Help Center
+            </p>
+
+            <p>
+                Returns
+            </p>
+
+            <p>
+                Delivery
+            </p>
+
+        </div>
+
+        <div>
+
+            <strong>
+                Secure Shopping
+            </strong>
+
+            <p>
+                Secure Checkout
+            </p>
+
+            <p>
+                Multiple Payment Options
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 ROHIT ADHAV Market.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<script>
+const categories =
+    {{ categories | tojson }};
+</script>
+
+
+<script
+    src="{{ url_for('static', filename='js/store.js') }}">
+</script>
+
+</body>
+
+</html>
+```

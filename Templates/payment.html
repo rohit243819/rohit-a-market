@@ -1,0 +1,195 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        ROHIT ADHAV Market - Payment
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <a href="/" class="logo">
+        ROHIT <span>ADHAV</span> Market
+    </a>
+
+    <strong>
+        Payment
+    </strong>
+
+    <a
+        href="/checkout"
+        class="back-link">
+
+        ← Back
+
+    </a>
+
+</header>
+
+
+<main class="checkout-container">
+
+    <section class="checkout-card">
+
+        <div class="section-label">
+            STEP 2
+        </div>
+
+        <h1>
+            Select Payment Method
+        </h1>
+
+        <p class="muted">
+            Choose your preferred payment method.
+        </p>
+
+        <div class="payment-methods">
+
+            <label class="payment-option">
+
+                <input
+                    type="radio"
+                    name="payment"
+                    value="upi"
+                    checked>
+
+                <span>
+                    📱
+                </span>
+
+                <div>
+
+                    <strong>
+                        UPI
+                    </strong>
+
+                    <small>
+                        Google Pay, PhonePe, Paytm
+                    </small>
+
+                </div>
+
+            </label>
+
+
+            <label class="payment-option">
+
+                <input
+                    type="radio"
+                    name="payment"
+                    value="card">
+
+                <span>
+                    💳
+                </span>
+
+                <div>
+
+                    <strong>
+                        Credit / Debit Card
+                    </strong>
+
+                    <small>
+                        Visa, Mastercard, RuPay
+                    </small>
+
+                </div>
+
+            </label>
+
+
+            <label class="payment-option">
+
+                <input
+                    type="radio"
+                    name="payment"
+                    value="cod">
+
+                <span>
+                    📦
+                </span>
+
+                <div>
+
+                    <strong>
+                        Cash on Delivery
+                    </strong>
+
+                    <small>
+                        Pay when your order arrives
+                    </small>
+
+                </div>
+
+            </label>
+
+        </div>
+
+
+        <div id="paymentFields"></div>
+
+
+        <button
+            id="payButton"
+            class="main-button full-button">
+
+            Place Order
+
+        </button>
+
+
+        <p class="security-note">
+
+            🔒 Demo payment.
+            No real money is charged.
+
+        </p>
+
+    </section>
+
+
+    <aside class="checkout-card">
+
+        <h2>
+            Order Total
+        </h2>
+
+        <div class="total-row">
+
+            <span>
+                Total
+            </span>
+
+            <strong id="paymentTotal">
+                ₹0
+            </strong>
+
+        </div>
+
+    </aside>
+
+</main>
+
+
+<script
+    src="{{ url_for('static', filename='js/payment.js') }}">
+</script>
+
+</body>
+
+</html>
+```

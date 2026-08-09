@@ -1,0 +1,154 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        ROHIT ADHAV Market - Checkout
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <a href="/" class="logo">
+        ROHIT <span>ADHAV</span> Market
+    </a>
+
+    <strong>
+        Secure Checkout
+    </strong>
+
+    <a
+        href="/"
+        class="back-link">
+
+        ← Continue Shopping
+
+    </a>
+
+</header>
+
+
+<main class="checkout-container">
+
+    <section>
+
+        <div class="checkout-card">
+
+            <div class="section-label">
+                STEP 1
+            </div>
+
+            <h1>
+                Delivery Details
+            </h1>
+
+            <p class="muted">
+                Enter the address where your
+                order should be delivered.
+            </p>
+
+            <form id="checkoutForm">
+
+                <div class="form-grid">
+
+                    <input
+                        required
+                        name="name"
+                        placeholder="Full Name">
+
+                    <input
+                        required
+                        name="phone"
+                        placeholder="Mobile Number">
+
+                    <input
+                        required
+                        name="email"
+                        type="email"
+                        placeholder="Email Address">
+
+                    <input
+                        required
+                        name="pincode"
+                        placeholder="PIN Code">
+
+                    <input
+                        required
+                        name="city"
+                        placeholder="City">
+
+                    <input
+                        required
+                        name="state"
+                        placeholder="State">
+
+                </div>
+
+                <textarea
+                    required
+                    name="address"
+                    placeholder="Full Delivery Address"></textarea>
+
+                <button
+                    type="submit"
+                    class="main-button full-button">
+
+                    Continue to Payment →
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <aside class="checkout-card">
+
+        <h2>
+            Order Summary
+        </h2>
+
+        <div id="checkoutItems"></div>
+
+        <hr>
+
+        <div class="total-row">
+
+            <span>
+                Total
+            </span>
+
+            <strong id="checkoutTotal">
+                ₹0
+            </strong>
+
+        </div>
+
+    </aside>
+
+</main>
+
+
+<script
+    src="{{ url_for('static', filename='js/checkout.js') }}">
+</script>
+
+</body>
+
+</html>
+```
